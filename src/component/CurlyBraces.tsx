@@ -2,15 +2,18 @@ import React from 'react'
 
 export default function CurlyBraces() {
     // Curly Braces :
-    // - JSX에서 자바스크립트 표현식을 작성할 때 사용하는 방법
+    // - JSX에서 자바스크립트 *표현식*을 작성할 때 사용하는 방법
     // - JSX 안에 { }로 영역을 지정하여 그 안에 자바스크립트 표현식을 작성
 
     const title = 'Curly Braces';
 
     const array =['apple', 'banana', 'cacao'];
-    const object = {
-        name: '이성계',
-        ho: '태조'
+    const object = { name: '이성계', ho: '태조' };
+
+    const inputProp = {
+        type: 'text',
+        placeholder: '리액트 컴포넌트',
+        readOnly: false
     };
 
     // 1. 요소의 컨텐츠에 자바스크립트의 표현식 결과를 사용하고자 할 때 쓰임
@@ -19,6 +22,7 @@ export default function CurlyBraces() {
     //    - JSX에서 인라인 스타일은 문자열 X, 객체로 표현
     // 4. *배열은 각 요소를 나열하면서 렌더링* 되지만, 객체는 직접 렌더링 시킬 수 없음
     // 5. 선언문, 제어문을 사용할 수 없음
+    // 6. 스프레드 연산자로 객체를 속성에 바로 지정 가능
 
     return (
         <>
@@ -31,6 +35,9 @@ export default function CurlyBraces() {
             </table>
             <div>{array}</div>
             <div>{object.name}</div>
+
+            <input type={inputProp.type} placeholder={inputProp.placeholder} readOnly={inputProp.readOnly} />
+            <input {...inputProp} />
         </>
     )
 }

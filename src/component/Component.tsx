@@ -2,7 +2,7 @@ import React from 'react';
 
 // jsx / tsx
 // JSX (JavaSctipt XML), TSX (TypeScript XML)
-// XML의 형태와 유사, DOM tree를 생성 JS, TS 확장자
+// XML의 형태와 유사, DOM tree를 생성 / JS, TS 확장자
 
 // 컴포넌트 :
 // 화면에 표시되는 하나의 단위 요소
@@ -31,7 +31,7 @@ export class CalssComponent extends React.Component {
 
 // 2. function 컴포넌트
 // - 함수로 컴포넌트를 작성
-// - 절대적 주의사항! 반드시 첫 글자를 대문자로 작성하는  UpperCamelCase를 사용해야 컴포넌트로 인식함
+// - 절대적 주의사항! *반드시 첫 글자를 대문자*로 작성하는  UpperCamelCase를 사용해야 컴포넌트로 인식함
 // - 함수의 반환값으로 렌더링 하고자 하는 요소를 반환
 export function FunctionalComponent() {
     return (
@@ -55,6 +55,7 @@ export function FunctionalComponent() {
 //     )
 //   }
 // }
+
 
 // 함수형 컴포넌트 : rfc 단축 명령으로 생성 가능
 // 함수 이름 = 파일의 이름과 동일하게 작성됨
@@ -99,7 +100,7 @@ export default function Component() {
     )
 }
 
-// 내보낸 변수 'default'을(를) 다시 선언할 수 없습니다.
+// 내보낸 변수 'default'을(를) 다시 선언할 수 없습니다. >> default는 하나만!
 // export default function Component1() {
 //     return (
 //         <div>Component</div>
