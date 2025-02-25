@@ -49,7 +49,7 @@ function Profile({ name, imageId, profession, awards, discovered }: Props) {
 
 export default function Gallery() {
 
-  const profile: Props[] = [
+  const profiles: Props[] = [
     {
       name: 'Maria Skłodowska-Curie',
       imageId: 'szV5sdG',
@@ -69,8 +69,8 @@ export default function Gallery() {
   return (
     <div>
       <h1>Notable Scientists</h1>
-      <Profile {...profile[0]}></Profile>
-      <Profile {...profile[1]}></Profile>
+      <Profile {...profiles[0]}></Profile>
+      <Profile {...profiles[1]}></Profile>
     </div>
   );
 }

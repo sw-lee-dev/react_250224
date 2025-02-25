@@ -6,6 +6,7 @@ import Properties from './component-manage/Properties';
 import Profile from './component-manage/example/Example2';
 import Gallery from './component-manage/example/Example1';
 import ConditionRender from './component-manage/ConditionRender';
+import ListRender from './component-manage/ListRender';
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
       {/* <Properties /> */}
       {/* <Gallery /> */}
       {/* <Profile /> */}
-      <ConditionRender />
+      {/* <ConditionRender /> */}
+      <ListRender />
     </div>
   );
 }
