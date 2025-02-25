@@ -18,10 +18,13 @@ interface Props {
 }
 
 function Avatar({ person, size }: Props) {
+
+  const imgsize = size > 90 ? 'b' : 's';
+
   return (
     <img
       className="avatar"
-      src={getImageUrl(person, 'b')}
+      src={getImageUrl(person, imgsize)}
       alt={person.name}
       width={size}
       height={size}
