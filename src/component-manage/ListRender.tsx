@@ -17,7 +17,7 @@ export default function ListRender() {
   const filteredArrayItems = filteredItems.map((fruit, index) => <h3 key={index}>{fruit}</h3>);
 
   // 리스트를 반복하며 렌더링 할 땐 요소의 시작 태그에 key 속성(절대로 중복되지 않을 값)을 지정해야함
-  // key 속성의 역할 : 반복되는 요소에 대해 고유성을 부여해줌 (렌더링 시 위치를 기억하게 해줌)
+  //!key 속성의 역할 : 반복되는 요소에 대해 고유성을 부여해줌 (렌더링 시 위치를 기억하게 해줌)
 
   return (
     <div>

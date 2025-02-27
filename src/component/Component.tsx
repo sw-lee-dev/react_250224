@@ -31,7 +31,7 @@ export class CalssComponent extends React.Component {
 
 // 2. function 컴포넌트
 // - 함수로 컴포넌트를 작성
-// - 절대적 주의사항! *반드시 첫 글자를 대문자*로 작성하는  UpperCamelCase를 사용해야 컴포넌트로 인식함
+//!- 절대적 주의사항! *반드시 첫 글자를 대문자*로 작성하는  UpperCamelCase를 사용해야 컴포넌트로 인식함
 // - 함수의 반환값으로 렌더링 하고자 하는 요소를 반환
 export function FunctionalComponent() {
     return (
