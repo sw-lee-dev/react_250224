@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 // Hook 함수 :
 // - react에서 컴포넌트의 생명주기 및 상태에 따라 특정 작업을 수행하도록 하는 특별한 함수
@@ -20,6 +20,14 @@ export default function HookComponent1() {
   const [state, setState] = useState<number>(0);
   const [show, setShow] = useState<boolean>(false);
 
+  const onIncreaseHandler = () => {
+    setState(state + 1);
+  };
+
+  const onShowHandler = () => {
+    setShow(!show);
+  };
+
   //!- Hook 함수는 반드시 함수형 컴포넌트 코드 블럭 라인에 존재해야함
   // const func = () => {
   //   const [state, setState] = useState<number>(0);
@@ -33,7 +41,53 @@ export default function HookComponent1() {
   // - useEffect(호출할 콜백 함수, 스코프할 상태 배열);
   // 기억! 개발 환경에서는 mount - unmount - mount 단계를 거침 (Effect가 두 번 실행되는것처럼 보임)
 
+  // 1.mount 단계에서만 특정 함수 호출 방법
+  // 익명 함수와 함께 스코프할 상태 배열에 빈 배열을 전달
+  useEffect(() => {
+    console.log('mount!');
+  }, []);
+
+  // 스코프할 상태 배열을 지정하지 않으면 렌더링 될 때 마다 무한정 실행됨 (메모리 과다 주의!)
+  // useEffect(() => {
+  //   console.log('두번째 매개변수를 전달하지 않은 effect');
+  //   setState(state + 1);
+  // });
+
+  // 2.update 단계에서 특정 함수 호출 방법
+  useEffect(() => {
+    console.log('state 값이 변경됨!!');
+    // 스코프할 상태 배열에 지정된 상태를 해당 effect 내에서 변경하면 무한 호출됨 (메모리 과다 주의!)
+    // setState(state + 1);
+  }, [state]);
+
+  useEffect(() => {
+    console.log('state 혹은 show 상태가 변경됨!');
+  }, [state, show]);
+
   return (
-    <div>HookComponent1</div>
+    <div>
+      <h1>{state}</h1>
+      <button onClick={onIncreaseHandler}>+</button>
+
+      <button onClick={onShowHandler}>보기</button>
+      {show && <SubComponent />}
+    </div>
+  )
+}
+
+function SubComponent() {
+
+  // 3.unmount 단계에서만 특정 함수 호출 방법
+  // 호출할 콜백 함수의 반환 함수로 지정해주면 됨
+  useEffect(() => {
+    console.log('Sub 컴포넌트 마운트!!');
+
+    return () => {
+      console.log('Sub 컴포넌트 언마운트!!');
+    };
+  }, []);
+
+  return (
+    <h1 style={{ color: 'red' }}>Sub Component!</h1>
   )
 }
