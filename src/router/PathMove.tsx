@@ -18,7 +18,7 @@ export default function PathMove() {
   // - 현재 웹 애플리케이션 내에서 URL만 변경할 수 있도록 하는 컴포넌트
   // - <Link> 컴포넌트는 새로운 요청을 보내지 않음
 
-  // useNavifate() :
+  // useNavigate() :
   // - navigator 함수를 반환하는 react-router의 훅 함수
   // - navigator 함수 : 새로운 요청없이 path를 변경해주는 함수
   const navigator = useNavigate();
