@@ -17,6 +17,7 @@ import { Outlet, Route, Routes, useLocation } from 'react-router';
 import PathMove from './router/PathMove';
 import QueryString from './router/QueryString';
 import PathVariable from './router/PathVariable';
+import Zustand from './zustand/Zustand';
 
 // react-router 패키지 :
 // - React의 SPA(Single Page Application)에서 라우팅을 구현하기 위한 라이브러리 (Spring에서는 Controller가 라우팅)
@@ -69,6 +70,8 @@ function App() {
         <Route path={'query-string'} element={<QueryString />} />
         <Route path={'path-variable/:name'} element={<PathVariable />} />
       </Route>
+
+      <Route path={'/zustand'} element={<Zustand />} />
 
       <Route path={'*'} element={<h1>404!</h1>} />
     </Routes>
