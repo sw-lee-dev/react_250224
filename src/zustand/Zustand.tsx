@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { create } from 'zustand';
 
 // zustand(독일어: 상태) 패키지 :
