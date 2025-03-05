@@ -35,12 +35,33 @@ export default function Cookie() {
 
   const onAddClick = () => {
     // 쿠키를 추가할 땐 setCookie 함수를 사용할 수 있음
-    // - setCookie(쿠키이름, 쿠키값, 옵션(선택사항));
+    // - setCookie(쿠키이름, 쿠키값, 옵션[선택사항]);
 
     // 옵션 종류 (객체 형태)
     // - path : 해당 쿠키가 적용될 경로
     // - expires : 만료 시간
-    setCookie(cookieName, cookieValue, { path: '/' });
+    const now = new Date();
+    const expires = new Date(now.setSeconds(now.getSeconds() + 10));
+    setCookie(cookieName, cookieValue, { 
+      path: '/', 
+      //expires: expires
+    });
+  };
+
+  const onGetCookie = () => {
+    // cookies 객체에 브라우저가 가지고 있는 쿠키 정보가 담겨있음
+    // console.log(cookies);
+    // console.log(cookies.name);
+    console.log(cookies[cookieName]); // 인덱싱 기법을 사용해서 유연하게 접근
+  };
+
+  const onRemoveCookie = () => {
+    // removeCookie 함수를 사용하여 쿠키 제거 가능
+    // removeCookie(쿠키이름, 옵션[선택사항]);
+    
+    // 옵션 종류 (객체 형태)
+    // - path : 해당 쿠키가 적용될 경로
+    removeCookie(cookieName, { path: '/' });
   };
 
   return (
@@ -48,8 +69,8 @@ export default function Cookie() {
       <input value={cookieName} onChange={onNameChange} />
       <input value={cookieValue} onChange={onValueChange} />
       <button onClick={onAddClick} >추가</button>
-      <button>확인</button>
-      <button>제거</button>
+      <button onClick={onGetCookie} >확인</button>
+      <button onClick={onRemoveCookie} >제거</button>
     </div>
   )
 }
