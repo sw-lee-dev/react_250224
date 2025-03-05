@@ -5,7 +5,7 @@ import React, { ChangeEvent, useState } from 'react';
 
 // - storage : 브라우저(클라이언트)에 데이터를 저장하고 관리하는 방법
 //           : 요청과는 무관한 특성을 가지고 있음
-//           : 쿠키와 비교했을 때 저장할 수 있는 용량이 큼
+//           : 쿠키와 비교했을 때 저장할 수 있는 용량이 큼 (local storage: 5MB, cookie: 4KB)
 //           : 데이터를 key-value 형태로 저장
 //           : 사용자가 삭제하지 않는 한 영구적으로 유지할 수도 있음
 //    - local storage : 브라우저를 닫아도 영구적으로 유지됨 (사용자가 직접 삭제해야함)
