@@ -44,7 +44,7 @@ export default function Cookie() {
     const expires = new Date(now.setSeconds(now.getSeconds() + 10));
     setCookie(cookieName, cookieValue, { 
       path: '/', 
-      //expires: expires
+      expires: expires
     });
   };
 

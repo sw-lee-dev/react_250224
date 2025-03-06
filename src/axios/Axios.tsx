@@ -34,7 +34,7 @@ export default function Axios() {
   const onBasicGet = () => {
     axios.get('http://127.0.0.1:8080/basic')
     // 각각의 http method 메서드에 then으로 response 객체를 받는 콜백 함수를 전달
-    // then은 request에 대해서 성공엔 경우만 수행
+    // then은 request에 대해서 성공인 경우만 수행
     // then은 response의 http 상태 코드 100 ~ 300를 처리
     .then((response) => {
       console.log(response.data);
@@ -69,7 +69,7 @@ export default function Axios() {
     // axios의 post, patch, put 요청에 두번째 매개변수로 requestBody를 지정할 수 있음
     // 이때는 객체 타입이어야 함(JSON으로 처리하기 위해)
     //!!post, patch, put 메서드의 두번째 매개변수는 반드시 requestBody임!
-    //!!requestBody 없이 option(선택사항으로 세번째 매개변수로 올 수 있음)만 지정하더라도 requestBody에는 빈 객체가 있어야 함!
+    //!!requestBody 없이 option(선택사항, 세번째 매개변수로 올 수 있음)만 지정하더라도 requestBody에는 빈 객체가 있어야 함!
     axios.post('http://127.0.0.1:8080/request-data/request-body', { name, age })
     .then((response) => {
       const responseBody = response.data;
